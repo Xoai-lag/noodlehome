@@ -15,4 +15,8 @@ func main() {
 	// Khởi động server và lắng nghe trên cổng 8080
 	// Tham số nil sử dụng http.DefaultServeMux cho việc xử lý các yêu cầu
 	http.ListenAndServe(":8080", nil)
+
+
+	// Chạy server trên IP mạng nội bộ (0.0.0.0 để lắng nghe mọi thiết bị)
+	//http.ListenAndServe("0.0.0.0:8080", nil)
 }
