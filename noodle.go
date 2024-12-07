@@ -1,20 +1,21 @@
 package main
 
-import (
-	"fmt"
-	"net/http"
-)
+import "github.com/gin-gonic/gin"
 
 func main() {
-	// Serve static files
-	fs := http.FileServer(http.Dir("./static"))
-	http.Handle("/", fs)
-
-	// Start the server
+	//tao router
+	r := gin.Default()
+	//cung cap ca file tinh css, js ...
+	r.Static("/static", "./static")
+	//router chinh hien thi giao dien dang nhap
+	r.GET("/", func(c *gin.Context) {
+		c.HTML(200, "register.html", nil)
+	})
+	//load cac file html trong thu muc static
+	r.LoadHTMLGlob("templates/*")
 	port := ":8080"
-	fmt.Printf("Server running at http://localhost%s\n", port)
-	err := http.ListenAndServe(port, nil)
-	if err != nil {
-		fmt.Println("Error starting server:", err)
+	println("Sever dang chay tai http://localhost" + port)
+	if err := r.Run(port); err != nil {
+		panic(err)
 	}
 }
