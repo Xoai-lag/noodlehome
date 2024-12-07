@@ -5,6 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a98e413a-86e2-4b0a-b235-f93f352fc0c8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/static/css/base.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/Noodle-removebg-preview.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/app_store.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/clock.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/google.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/phone-call.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/qr_code.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/qr_code_shoppe.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/store.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,39 +46,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Go Build.go build noodlehome.executor&quot;: &quot;Run&quot;,
-    &quot;JavaScript Debug.form.html.executor&quot;: &quot;Run&quot;,
-    &quot;JavaScript Debug.đăng ký.html.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
-    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/nguye/noodlehome&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultGoTemplateProperty": "Go File",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Go Build.go build noodlehome.executor": "Run",
+    "JavaScript Debug.form.html.executor": "Run",
+    "JavaScript Debug.index.html.executor": "Run",
+    "JavaScript Debug.đăng ký.html.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "git-widget-placeholder": "main",
+    "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
+    "last_opened_file_path": "C:/Users/nguye/noodlehome/static/font",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;HTML&quot;
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "HTML"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nguye\noodlehome\static\font" />
+      <recent name="C:\Users\nguye\noodlehome\static\img" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nguye\noodlehome\static" />
       <recent name="C:\Users\nguye\AppData\Roaming\JetBrains\GoLand2024.2\extensions\Giao diện" />
       <recent name="C:\Users\nguye\AppData\Roaming\JetBrains\GoLand2024.2\extensions\Giao dien chinh\css" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.đăng ký.html">
+  <component name="RunManager" selected="JavaScript Debug.index.html">
     <configuration name="go build noodlehome" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
       <module name="noodlehome" />
       <working_directory value="$PROJECT_DIR$" />
@@ -79,11 +97,15 @@
     <configuration name="form.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/noodlehome/static/form.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/noodlehome/static/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="đăng ký.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/noodlehome/static/đăng ký.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="JavaScript Debug.đăng ký.html" />
         <item itemvalue="JavaScript Debug.form.html" />
       </list>
