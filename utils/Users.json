@@ -4,5 +4,17 @@
     "full_name_u": "Alice Johnson",
     "password_u": "alicepass",
     "email_u": "alice@example.com"
+  },
+  {
+    "id_u": "1",
+    "full_name_u": "User1",
+    "password_u": "0123",
+    "email_u": "emilya@gmail.com"
+  },
+  {
+    "id_u": "2",
+    "full_name_u": "User2",
+    "password_u": "0123",
+    "email_u": "emilyadz@gmail.com"
   }
 ]

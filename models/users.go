@@ -12,13 +12,12 @@ type Users struct {
 	Email_u     string `json:"email_u"`
 }
 
-func LoadUsersFromJson(Filename string) ([]Users, error) {
-	var users []Users
+func LoadUsersFromJson(Filename string, users *[]Users) error {
 	err := utils.LoadDataFromJson(Filename, &users)
 	if err != nil {
-		return nil, fmt.Errorf("Error loading users from file %s: %v", Filename, err)
+		return fmt.Errorf("Error loading users from file %s: %v", Filename, err)
 	}
-	return users, nil
+	return nil
 }
 
 func SaveUsersToJson(Filename string, users []Users) error {
