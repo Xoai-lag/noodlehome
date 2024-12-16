@@ -4,27 +4,71 @@
     <title>Web Project</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="/static/style.css">
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
 <div class="wrapper">
-    <h1>Đăng ký</h1>
-    <div class="input-field">
-        <input type="email" name="email"  required>
-        <label>Email</label>
-    </div>
-    <div class="input-field">
-        <input type="password" name="password"  required>
-        <label>Password</label>
-    </div>
-    <div class="input-field">
-        <input type="password" name="confirm_password" required>
-        <label>Confirm Password</label>
-    </div>
-    <button type="submit">Register</button>
+    <!-- Form 1 -->
+    <form id="form1" method="POST" action="/register">
+        <h1>Register</h1>
+        <div class="input-field">
+            <input type="email" name="email" required id="email">
+            <label>Email</label>
+        </div>
+        <div class="input-field">
+            <input type="password" name="password" required id="password">
+            <label>Password</label>
+        </div>
+        <div class="input-field">
+            <input type="password" name="confirm_password" required id="cfpassword">
+            <label>Confirm Password</label>
+        </div>
+        <button type="button" id="nextBtn">Next</button>
+    </form>
+
+    <!-- Form 2 -->
+    <form id="form2" method="POST" action="/register" class="hidden">
+        <h1>Register</h1>
+        <div class="input-field">
+            <input type="text" name="name" required id="name">
+            <label>Enter Name</label>
+        </div>
+        <div class="input-field">
+            <input type="text" name="address" required id="address">
+            <label>Enter Address</label>
+        </div>
+        <button type="submit">Register</button>
+        <button type="button" id="backBtn">Back</button>
+    </form>
+
     <div class="login">
         <p>Already have an account?</p>
         <a href="/login">Log in</a>
     </div>
 </div>
+<script src="/static/main.js"></script>
+<script>
+    // Lấy các phần tử HTML cần thiết
+    const form1 = document.getElementById("form1");
+    const form2 = document.getElementById("form2");
+    const nextBtn = document.getElementById("nextBtn");
+    const backBtn = document.getElementById("backBtn");
+
+    // Xử lý sự kiện khi nhấn nút "Next"
+    nextBtn.addEventListener("click", () => {
+        form1.classList.add("hidden");
+        form2.classList.remove("hidden");
+    });
+
+    // Xử lý sự kiện khi nhấn nút "Back"
+    backBtn.addEventListener("click", () => {
+        form2.classList.add("hidden");
+        form1.classList.remove("hidden");
+    });
+</script>
 </body>
 </html>

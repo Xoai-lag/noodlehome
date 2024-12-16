@@ -33,3 +33,19 @@ function jsloginhandler(e) {
             alert("Đã xảy ra lỗi. Vui lòng thử lại sau.");
         });
 }
+function jsregisterhandler(e){
+    e.preventDefault();
+    const email=document.getElementById("email").value;
+    const  password=document.getElementById("password").value;
+    const  cfpassword=document.getElementById("cfpassword").value;
+    const  address=document.getElementById("address").value;
+    if (password===cfpassword)
+    {
+        const user={
+          Email_u: email,
+          Password_u: password,
+
+        };
+    }
+
+}

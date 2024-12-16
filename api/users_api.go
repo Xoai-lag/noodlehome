@@ -42,14 +42,13 @@ func RegisterHandler(c *gin.Context) {
 	if err := models.LoadUsersFromJson("utils/Users.json", &listuser); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 	}
-	usertemp.Id_u = strconv.Itoa(len(listuser))
-	usertemp.Full_name_u = "User" + usertemp.Id_u
 	for _, user := range listuser {
 		if user.Email_u == usertemp.Email_u {
 			c.JSON(http.StatusBadRequest, gin.H{"error": "Email already exists"})
 			return
 		}
 	}
+	usertemp.Id_u = strconv.Itoa(len(listuser))
 	listuser = append(listuser, usertemp)
 	if err := models.SaveUsersToJson("utils/Users.json", listuser); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
