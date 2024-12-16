@@ -119,10 +119,16 @@ button{
     color: black;
     padding: 5px 15px;
     transition: transform 0.3s ease;
+    margin:10px 120px;
 }
 
 #backBtn:hover {
     background: black;
     color: white;
     transform: scale(1.1);
+}
+
+.btn--left-arrow
+{
+    font-weight: 500;
 }
