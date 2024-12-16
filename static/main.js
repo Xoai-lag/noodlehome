@@ -38,12 +38,14 @@ function jsregisterhandler(e){
     const email=document.getElementById("email").value;
     const  password=document.getElementById("password").value;
     const  cfpassword=document.getElementById("cfpassword").value;
-    const  address=document.getElementById("address").value;
+    const  name=document.getElementById("name").value;
     if (password===cfpassword)
     {
         const user={
           Email_u: email,
           Password_u: password,
+          Name_u: cfpassword,
+
 
         };
     }
