@@ -1,6 +1,7 @@
 package api
 
 import (
+	"github.com/gin-contrib/sessions"
 	"github.com/gin-gonic/gin"
 	"net/http"
 	"noodlehome/models"
@@ -25,6 +26,14 @@ func LoginHandler(c *gin.Context) {
 	// Kiểm tra người dùng
 	for _, existingUser := range listuser {
 		if existingUser.Email_u == user.Email_u && existingUser.Password_u == user.Password_u {
+			session := sessions.Default(c)
+			session.Set("user_email", existingUser.Email_u)
+			session.Set("user_name", existingUser.Full_name_u)
+			err := session.Save()
+			if err != nil {
+				c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+				return
+			}
 			c.JSON(http.StatusOK, gin.H{"message": "Login successful"})
 			return
 		}
@@ -41,6 +50,7 @@ func RegisterHandler(c *gin.Context) {
 	var listuser []models.Users
 	if err := models.LoadUsersFromJson("utils/Users.json", &listuser); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
 	}
 	for _, user := range listuser {
 		if user.Email_u == usertemp.Email_u {

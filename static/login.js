@@ -21,7 +21,21 @@ function jsloginhandler(e) {
         .then(response => response.json())
         .then(data => {
             if (data.message === "Login successful") {
-                window.location.href = "/home"; // Chuyển hướng đến trang home
+                // Sau khi đăng nhập thành công, kiểm tra session
+                fetch("/checkcookie", { method: "GET" })
+                    .then(sessionResponse => sessionResponse.json())
+                    .then(sessionData => {
+                        if (sessionData.message === "Session valid") {
+                            // Chuyển hướng đến trang home
+                            document.location.href = "/home";
+                        } else {
+                            alert("Please login first");
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Lỗi khi kiểm tra session:", error);
+                        alert("Đã xảy ra lỗi. Vui lòng thử lại sau.");
+                    });
             } else {
                 alert(data.error); // Hiển thị lỗi nếu đăng nhập thất bại
             }
