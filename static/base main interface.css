@@ -42,10 +42,9 @@ html
     display: flex;
     flex-wrap: wrap;
     margin-left: -5px;
-    margin-right: -12px;
 }
 
-/* Test */
+
 .grid__column-2
 {
     padding-left: 12px;

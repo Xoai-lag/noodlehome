@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TIỆM MÌ NHÀ TỚ</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="/static/base main interface.css">
     <link rel="stylesheet" href="/static/main interface.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="/static/font/fontawesome-free-6.7.1-web/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css">
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"> -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -27,7 +29,8 @@
 
                             </span>
                         <a href="" class="header__navbar-icon-link">
-                            <i class="header__navbar-icon fa-brands fa-square-facebook"></i>
+<!--                            <i class="header__navbar-icon fa-brands fa-square-facebook"></i>-->
+                            <i class="header__navbar-icon fa-brands fa-facebook"></i>
                         </a>
                     </li>
 
@@ -80,18 +83,23 @@
                     </li>
                     <!-- <li class="header__navbar-item header__navbar-item--strong header__navbar-item--separate">Đăng nhập</li>
                     <li class="header__navbar-item header__navbar-item--strong">Đăng ký</li> -->
-                    <div>
-                        <li class="header__navbar-item header__navbar-user">
+                    <li>
+                        <div class="header__navbar-item header__navbar-user">
                             <img src="/static/img/user.png" alt="" class="header__navbar-user-img">
-                            <span color="#333" class="header__navbar-user-name ">nguyenvanduy176@gmail.com</span>
+                            <span class="header__navbar-user-name ">nguyenvanduy176@gmail.com</span>
 
                             <ul class="header__navbar-user-menu">
+
+                                <li class="header__navbar-user-item">
+                                    <a href="">Tài khoản</a>
+                                </li>
+
                                 <li class="header__navbar-user-item">
                                     <a href="">Đăng xuất</a>
                                 </li>
                             </ul>
-                        </li>
-                    </div>
+                        </div>
+                    </li>
                 </ul>
             </nav>
             <div class="header__info">
@@ -126,10 +134,10 @@
             </div>
 
             <button class="header__cart">
-                <div class="cart-icon">
-                    <i class="header__cart-icon fa-solid fa-cart-shopping"></i>
+                <span class="cart-icon">
+                    <i class="header__cart-icon  fa-solid fa-cart-shopping"></i>
                     <span class="notification-dot"></span>
-                </div>
+                </span>
             </button>
         </div>
 
@@ -146,22 +154,29 @@
 
                     <ul class="category-list">
                         <li class="category-item category-item--active">
-                            <a href="#" class="category-item__link">
+                            <a href="#" class="category-item__link" data-category="tất-cả">
+                                Tất cả
+                            </a>
+                        </li>
+
+                        <li class="category-item">
+                            <a href="#" class="category-item__link" data-category="mì-khô">
                                 Mì khô
                             </a>
                         </li>
+
                         <li class="category-item">
-                            <a href="#" class="category-item__link">
+                            <a href="#" class="category-item__link" data-category="mì-nước">
                                 Mì nước
                             </a>
                         </li>
                         <li class="category-item">
-                            <a href="#" class="category-item__link">
+                            <a href="#" class="category-item__link" data-category="thức-uống">
                                 Thức uống
                             </a>
                         </li>
                         <li class="category-item">
-                            <a href="#" class="category-item__link">
+                            <a href="#" class="category-item__link" data-category="thức-ăn-thêm">
                                 Thức ăn thêm
                             </a>
                         </li>
@@ -169,169 +184,145 @@
                 </nav>
             </div>
             <div class="grid__column-10">
-                <div class="home-filter">
-                        <span class="home-filter__label">
-                            Sắp xếp theo
-                        </span>
-                    <button class="home-filter__btn  btn">Phổ biến</button>
-                    <button class="home-filter__btn  btn home-filter__btn  btn--primary">Mới nhất</button>
-                    <button class="home-filter__btn  btn">Bán chạy</button>
-                    <div class="select-input">
-                        <span class="select-input__label">Giá</span>
-                        <i class="select-input__icon fa-solid fa-angle-down"></i>
-
-                        <!-- List options -->
-                        <ul class="select-input__list">
-                            <li class="select-input__item">
-                                <a href="" class="select-input__link">Giá: Thấp đến cao</a>
-
-                            </li>
-                            <li class="select-input__item">
-
-                                <a href="" class="select-input__link">Giá: Cao đến thấp</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="home-filter__page">
-                            <span class="home-filter__page-num">
-                                <span class="home-filter__page-current">1</span>
-                                /
-                                1
-                            </span>
-                        <div class="home-filter__page-control">
-                            <a href="" class="home-filter__page-btn">
-                                <i class="home-filter__page-icon fa-solid fa-angle-left"></i>
-                            </a>
-
-                            <a href="" class="home-filter__page-btn">
-                                <i class="home-filter__page-icon fa-solid fa-angle-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="home-product">
                     <!--Grid -> Row -> Column  -->
-                    <div class="grid__row">
+                    <div class="grid__row" data-category="Tất-cả" >
                         <div class="grid__column-2-4">
                             <!-- Product Items -->
-                            <div class="home-product-item">
+                            <div class="home-product-item" data-category="mì-khô" >
                                 <div class="home-product-item__img" style="background-image:url(https://media-cdn-v2.laodong.vn/storage/newsportal/2022/6/20/1058473/Mi-Y-Tom-Ap-Chao-Sot.jpg?w=800&h=496&crop=auto&scale=both) ;"></div>
                                 <h5 class="home-product-item__name">MÌ Ý PENNE</h5>
                                 <span class="home-product-item__price">45.000đ</span>
-                                <button class="home-product-item__add" >
-                                    <i class=" fa-solid fa-circle-plus"></i>
-                                </button>
+                                <div class="home-product-item__add" >
+                                    <button class="minus-btn">–</button>
+                                    <span class="quantity">0</span>
+                                    <button class="plus-btn">+</button>
+                                </div>
                             </div>
-                            <!-- <span class="home-product-item__add">
-                                <i class="fa-solid fa-circle-plus"></i>
-                            </span> -->
+
                         </div>
 
                         <div class="grid__column-2-4">
                             <!-- Product Items -->
-                            <div class="home-product-item">
+                            <div class="home-product-item " data-category="mì-nước">
                                 <div class="home-product-item__img" style="background-image:url(https://culaochamtourist.vn/wp-content/uploads/2022/10/mi-quang-hoi-an-2.jpg.jpg) ;"></div>
                                 <h5 class="home-product-item__name">MÌ QUẢNG</h5>
                                 <span class="home-product-item__price">45.000đ</span>
-                                <button class="home-product-item__add" >
-                                    <i class=" fa-solid fa-circle-plus"></i>
-                                </button>
+                                <div class="home-product-item__add" >
+                                    <button class="minus-btn">–</button>
+                                    <span class="quantity">0</span>
+                                    <button class="plus-btn">+</button>
+                                </div>
                             </div>
                         </div>
                         <div class="grid__column-2-4">
                             <!-- Product Items -->
-                            <div class="home-product-item">
+                            <div class="home-product-item" data-category="mì-khô">
                                 <div class="home-product-item__img" style="background-image:url(https://cdn.nguyenkimmall.com/images/companies/_1/tin-tuc/kinh-nghiem-meo-hay/n%E1%BA%A5u%20%C4%83n/mi-Y-so-bo-bam.jpeg.jpg) ;"></div>
                                 <h5 class="home-product-item__name">MÌ Ý THỊT BẰM</h5>
                                 <span class="home-product-item__price">55.000đ</span>
-                                <button class="home-product-item__add" >
-                                    <i class=" fa-solid fa-circle-plus"></i>
-                                </button>
+                                <div class="home-product-item__add" >
+                                    <button class="minus-btn">–</button>
+                                    <span class="quantity">0</span>
+                                    <button class="plus-btn">+</button>
+                                </div>
                             </div>
                         </div>
                         <div class="grid__column-2-4">
                             <!-- Product Items -->
-                            <div class="home-product-item">
+                            <div class="home-product-item" data-category="mì-khô">
                                 <div class="home-product-item__img" style="background-image:url(https://cdn.nguyenkimmall.com/images/companies/_1/tin-tuc/kinh-nghiem-meo-hay/n%E1%BA%A5u%20%C4%83n/mi-Y-hai-san.jpg.jpg) ;"></div>
                                 <h5 class="home-product-item__name">MÌ Ý HẢI SẢN</h5>
                                 <span class="home-product-item__price">65.000đ</span>
-                                <button class="home-product-item__add" >
-                                    <i class=" fa-solid fa-circle-plus"></i>
-                                </button>
+                                <div class="home-product-item__add" >
+                                    <button class="minus-btn">–</button>
+                                    <span class="quantity">0</span>
+                                    <button class="plus-btn">+</button>
+                                </div>
                             </div>
                         </div>
                         <div class="grid__column-2-4">
                             <!-- Product Items -->
-                            <div class="home-product-item">
+                            <div class="home-product-item" data-category="mì-khô">
                                 <div class="home-product-item__img" style="background-image:url(https://cdn.nguyenkimmall.com/images/companies/_1/tin-tuc/kinh-nghiem-meo-hay/n%E1%BA%A5u%20%C4%83n/mi-Y-sot-kem.jpg.jpg) ;"></div>
                                 <h5 class="home-product-item__name">MÌ Ý SỐT KEM</h5>
                                 <span class="home-product-item__price">60.000đ</span>
-                                <button class="home-product-item__add" >
-                                    <i class=" fa-solid fa-circle-plus"></i>
-                                </button>
+                                <div class="home-product-item__add" >
+                                    <button class="minus-btn">–</button>
+                                    <span class="quantity">0</span>
+                                    <button class="plus-btn">+</button>
+                                </div>
                             </div>
                         </div>
 
 
                         <div class="grid__column-2-4">
                             <!-- Product Items -->
-                            <div class="home-product-item">
+                            <div class="home-product-item" data-category="mì-nước">
                                 <div class="home-product-item__img" style="background-image:url(https://cdn.tgdd.vn/Files/2018/04/01/1078986/bat-mi-nhung-nguyen-lieu-nau-mi-ramen-chuan-vi-nhat-ban1_800x450.jpg) ;"></div>
                                 <h5 class="home-product-item__name">RAMEN MISO</h5>
                                 <span class="home-product-item__price">70.000đ</span>
-                                <button class="home-product-item__add" >
-                                    <i class=" fa-solid fa-circle-plus"></i>
-                                </button>
+                                <div class="home-product-item__add" >
+                                    <button class="minus-btn">–</button>
+                                    <span class="quantity">0</span>
+                                    <button class="plus-btn">+</button>
+                                </div>
                             </div>
                         </div>
 
                         <div class="grid__column-2-4">
                             <!-- Product Items -->
-                            <div class="home-product-item">
+                            <div class="home-product-item" data-category="thức-ăn-thêm">
                                 <div class="home-product-item__img" style="background-image:url(https://mituoi.com.vn/upload/product/11-5751.jpg) ;"></div>
                                 <h5 class="home-product-item__name">MÌ THÊM</h5>
                                 <span class="home-product-item__price">10.000đ</span>
-                                <button class="home-product-item__add" >
-                                    <i class=" fa-solid fa-circle-plus"></i>
-                                </button>
+                                <div class="home-product-item__add" >
+                                    <button class="minus-btn">–</button>
+                                    <span class="quantity">0</span>
+                                    <button class="plus-btn">+</button>
+                                </div>
                             </div>
                         </div>
 
                         <div class="grid__column-2-4">
                             <!-- Product Items -->
-                            <div class="home-product-item">
+                            <div class="home-product-item" data-category="thức-ăn-thêm">
                                 <div class="home-product-item__img" style="background-image:url(https://cdn.tgdd.vn/2021/06/CookProduct/thumbcmscn.jpg1-1200x676.jpg) ;"></div>
                                 <h5 class="home-product-item__name">MÌ Ý THÊM</h5>
                                 <span class="home-product-item__price">15.000đ</span>
-                                <button class="home-product-item__add" >
-                                    <i class=" fa-solid fa-circle-plus"></i>
-                                </button>
+                                <div class="home-product-item__add" >
+                                    <button class="minus-btn">–</button>
+                                    <span class="quantity">0</span>
+                                    <button class="plus-btn">+</button>
+                                </div>
                             </div>
                         </div>
 
                         <div class="grid__column-2-4">
                             <!-- Product Items -->
-                            <div class="home-product-item">
+                            <div class="home-product-item" data-category="thức-uống">
                                 <div class="home-product-item__img" style="background-image:url(https://file.hstatic.net/1000339999/file/cach-lam-tra-tac-kinh-doanh_6b3edf3123da41ef8db3b2cd02750f84_grande.png) ;"></div>
                                 <h5 class="home-product-item__name">Trà tắc</h5>
                                 <span class="home-product-item__price">20.000đ</span>
-                                <button class="home-product-item__add" >
-                                    <i class=" fa-solid fa-circle-plus"></i>
-                                </button>
+                                <div class="home-product-item__add" >
+                                    <button class="minus-btn">–</button>
+                                    <span class="quantity">0</span>
+                                    <button class="plus-btn">+</button>
+                                </div>
                             </div>
                         </div>
 
                         <div class="grid__column-2-4">
                             <!-- Product Items -->
-                            <div class="home-product-item">
+                            <div class="home-product-item" data-category="thức-uống">
                                 <div class="home-product-item__img" style="background-image:url(https://simexcodl.com.vn/wp-content/uploads/2024/05/tra-sua-ca-phe-2.jpg) ;"></div>
                                 <h5 class="home-product-item__name">TRÀ SỮA MẬT ONG</h5>
                                 <span class="home-product-item__price">35.000đ</span>
-                                <button class="home-product-item__add" >
-                                    <i class=" fa-solid fa-circle-plus"></i>
-                                </button>
+                                <div class="home-product-item__add" >
+                                    <button class="minus-btn">–</button>
+                                    <span class="quantity">0</span>
+                                    <button class="plus-btn">+</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -340,23 +331,52 @@
 
             </div>
         </div>
-        <!-- <section id="cart" class="cart">
-            <h2 class="section-title">Giỏ Hàng</h2>
-            <div class="cart-items"></div>
-            <div class="cart-footer">
-                <p>Tổng cộng: <span id="total-price">0</span> VND</p>
-                <button class="btn" id="checkout-btn">Thanh Toán</button>
-            </div>
-        </section> -->
 
 
     </div>
 
-    <footer class="footer">
 
-    </footer>
+
+
 </div>
-
-
 </body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Lấy danh sách các liên kết danh mục và sản phẩm
+        const categoryLinks = document.querySelectorAll('.category-item__link'); // Các link danh mục
+        const productItems = document.querySelectorAll('.home-product-item'); // Các sản phẩm
+
+        // Thêm sự kiện click cho mỗi liên kết danh mục
+        categoryLinks.forEach(link => {
+            link.addEventListener("click", function (e) {
+                e.preventDefault(); // Ngăn chặn hành vi mặc định của thẻ <a>
+
+                // Lấy giá trị danh mục từ thuộc tính data-category
+                const category = this.getAttribute("data-category");
+
+                // Thêm class 'active' vào danh mục được chọn
+                document.querySelector('.category-item--active')?.classList.remove('category-item--active');
+                this.parentElement.classList.add('category-item--active');
+
+                // Hiển thị sản phẩm theo danh mục
+                if (category === "tất-cả") {
+                    // Nếu là danh mục "Tất cả", hiển thị tất cả sản phẩm
+                    productItems.forEach(item => {
+                        item.parentElement.style.display = "block"; // Hiển thị tất cả
+                    });
+                } else {
+                    // Lọc sản phẩm theo danh mục
+                    productItems.forEach(item => {
+                        const itemCategory = item.getAttribute("data-category");
+                        if (itemCategory === category) {
+                            item.parentElement.style.display = "block"; // Hiển thị sản phẩm khớp danh mục
+                        } else {
+                            item.parentElement.style.display = "none"; // Ẩn sản phẩm không khớp
+                        }
+                    });
+                }
+            });
+        });
+    });
+</script>
 </html>
