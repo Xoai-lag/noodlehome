@@ -34,7 +34,7 @@ func LoginHandler(c *gin.Context) {
 
 func RegisterHandler(c *gin.Context) {
 	var usertemp models.Users
-	if err := c.ShouldBind(&usertemp); err != nil {
+	if err := c.ShouldBindJSON(&usertemp); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}

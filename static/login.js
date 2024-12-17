@@ -1,4 +1,4 @@
-
+// Hàm xử lý khi đăng nhập
 function jsloginhandler(e) {
     e.preventDefault(); // Ngừng hành động mặc định của form
 
@@ -10,22 +10,20 @@ function jsloginhandler(e) {
         Password_u: password
     };
 
-    console.log("User data:", user); // Kiểm tra đối tượng user
-
+    // Gửi dữ liệu lên server qua API login
     fetch("/login", {
         method: "POST",
         headers: {
             "Content-Type": "application/json", // Đảm bảo header Content-Type là application/json
         },
-        body: JSON.stringify(user), // Chuyển đổi đối tượng JavaScript thành JSON
+        body: JSON.stringify(user), // Chuyển đối tượng JavaScript thành JSON
     })
         .then(response => response.json())
         .then(data => {
             if (data.message === "Login successful") {
-                alert("Đăng nhập thành công");
-                window.location.href = "/home";
+                window.location.href = "/home"; // Chuyển hướng đến trang home
             } else {
-                alert(data.error);
+                alert(data.error); // Hiển thị lỗi nếu đăng nhập thất bại
             }
         })
         .catch(error => {
@@ -33,21 +31,6 @@ function jsloginhandler(e) {
             alert("Đã xảy ra lỗi. Vui lòng thử lại sau.");
         });
 }
-function jsregisterhandler(e){
-    e.preventDefault();
-    const email=document.getElementById("email").value;
-    const  password=document.getElementById("password").value;
-    const  cfpassword=document.getElementById("cfpassword").value;
-    const  name=document.getElementById("name").value;
-    if (password===cfpassword)
-    {
-        const user={
-          Email_u: email,
-          Password_u: password,
-          Name_u: cfpassword,
 
-
-        };
-    }
-
-}
+// Lắng nghe sự kiện submit của form đăng nhập
+document.getElementById("loginForm").addEventListener("submit", jsloginhandler);

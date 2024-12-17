@@ -34,12 +34,11 @@
     <form id="form2" method="POST" action="/register" class="hidden">
         <h1>Register</h1>
         <div class="input-field">
-            <input type="text" name="name" required id="name">
+            <input type="text" id="name" required name="name">
             <label>Enter Name</label>
         </div>
-
-        <button type="submit" >Register</button>
-        <button class="btn--left-arrow" type="button" id="backBtn">&#8592;</button> <!-- Mũi tên quay lại -->
+            <button type="submit" >Register</button>
+            <button class="btn--left-arrow" type="button" id="backBtn">&#8592;</button> <!-- Mũi tên quay lại -->
     </form>
 
     <div>
@@ -47,25 +46,6 @@
         <a href="/login">Log in</a>
     </div>
 </div>
-<script src="/static/main.js"></script>
-<script>
-    // Lấy các phần tử HTML cần thiết
-    const form1 = document.getElementById("form1");
-    const form2 = document.getElementById("form2");
-    const nextBtn = document.getElementById("nextBtn");
-    const backBtn = document.getElementById("backBtn");
-
-    // Xử lý sự kiện khi nhấn nút "Next"
-    nextBtn.addEventListener("click", () => {
-        form1.classList.add("hidden");
-        form2.classList.remove("hidden");
-    });
-
-    // Xử lý sự kiện khi nhấn nút "Back"
-    backBtn.addEventListener("click", () => {
-        form2.classList.add("hidden");
-        form1.classList.remove("hidden");
-    });
-</script>
+<script src="/static/register.js"></script>
 </body>
 </html>

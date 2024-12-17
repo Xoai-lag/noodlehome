@@ -19,6 +19,7 @@ func main() {
 		c.HTML(http.StatusOK, "home.html", nil)
 	})
 	r.POST("/login", api.LoginHandler)
+	r.POST("/register", api.RegisterHandler)
 	r.LoadHTMLGlob("templates/*.html")
 	r.Run()
 }
