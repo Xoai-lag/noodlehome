@@ -7,6 +7,22 @@ const backBtn = document.getElementById("backBtn");
 // Object lưu tạm dữ liệu từ Form 1
 let formData = {};
 
+function checkForm1Completion(){
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const confirm = document.getElementById("cfpassword").value;
+    // Kiểm tra tất cả các trường có giá trị
+    if (email && password && confirm){
+        // Nếu tất cả các trường có giá trị, kích hoạt nút "Next"
+        document.getElementById("nextBtn").disabled = false;
+    } else {
+        // Nếu có trường còn thiếu, vô hiệu hóa nút "Next"
+        document.getElementById("nextBtn").disabled = true;
+    }
+}
+document.getElementById("email").addEventListener("input", checkForm1Completion);
+document.getElementById("password").addEventListener("input", checkForm1Completion);
+document.getElementById("cfpassword").addEventListener("input", checkForm1Completion);
 // Xử lý sự kiện khi nhấn nút "Next"
 nextBtn.addEventListener("click", () => {
     const email = document.getElementById("email").value;
