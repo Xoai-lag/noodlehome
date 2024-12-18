@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MÌ Ý</title>
+    <title>Chi tiết sản phẩm</title>
     <link rel="stylesheet" href="/static/product.css">
+    <script src="/static/product.js"></script>
 </head>
 <body>
 <div class="container">
     <!-- Nút quay lại -->
-    <button class="back-button">&larr;</button>
+    <button class="back-button" onclick="goBack()">&larr;</button>
 
     <!-- Hình ảnh món ăn -->
     <div class="image-container">
-        <img src="https://media-cdn-v2.laodong.vn/storage/newsportal/2022/6/20/1058473/Mi-Y-Tom-Ap-Chao-Sot.jpg?w=800&h=496&crop=auto&scale=both" alt="Mỳ Ý">
+        <img id="product-image" src="">
         <div class="image-caption">
-            <h2>MÌ Ý PENNE</h2>
-            <p class="price">Giá: 45.000đ</p>
+            <h2 id="product-name"></h2>
+            <p id="product-price" class="price"></p>
         </div>
     </div>
 
@@ -24,11 +25,11 @@
     <div class="order-section">
         <input type="text" class="note-input" placeholder="Ghi chú món ăn">
         <div class="quantity-control">
-            <button class="minus-btn">–</button>
-            <span class="quantity">0</span>
-            <button class="plus-btn">+</button>
+            <button class="minus-btn" onclick="changeQuantity(-1)">–</button>
+            <span id="quantity" class="quantity">1</span>
+            <button class="plus-btn" onclick="changeQuantity(1)">+</button>
         </div>
-        <button class="add-to-cart">Thêm vào giỏ · +45.000đ</button>
+        <button class="add-to-cart" onclick="addToCart()">Thêm vào giỏ</button>
     </div>
 </div>
 </body>

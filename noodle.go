@@ -22,6 +22,9 @@ func main() {
 	r.GET("/home", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "home.html", nil)
 	})
+	r.GET("/product", func(c *gin.Context) {
+		c.HTML(http.StatusOK, "product.html", nil)
+	})
 	r.GET("/emailuserinfo", api.EmailUserInfo)
 	r.GET("/checkcookie", api.CheckCookieuser)
 	r.POST("/login", api.LoginHandler)
