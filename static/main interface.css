@@ -626,11 +626,6 @@
 }
 
 /* Home */
-.home-product
-{
-
-}
-
 .home-filter
 {
     background-color: lightgrey;
@@ -697,7 +692,7 @@
 
 .home-product-item
 {
-
+    cursor: pointer;
     margin-top: 10px;
     background-color: var(--white-color);
 }

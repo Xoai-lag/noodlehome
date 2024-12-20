@@ -1,5 +1,4 @@
 window.onload = function() {
-
     const productName = sessionStorage.getItem('productName');
     const productImage = sessionStorage.getItem('productImage');
     const productPrice = sessionStorage.getItem('productPrice');
