@@ -9,17 +9,23 @@ window.addEventListener('pageshow', function() {
             const quantitySpan = item.querySelector('.quantity');
             quantitySpan.innerText = quantity;
         });
+        console.log("Session Storage:", sessionStorage.getItem("cart"));
+        loadCart();
     }
-    loadCart();
 });
 function loadCart() {
-    const cartContainer = document.querySelector(".cart-content");
+    const cartContainer = document.querySelector(".container_list");
     const emptyCartMessage = document.getElementById("empty-cart-message");
     const cartTotalElement = document.querySelector(".cart-total");
 
-    // Lấy dữ liệu từ sessionStorage
-    const cart = JSON.parse(sessionStorage.getItem("cart")) || [];
-
+// Lấy dữ liệu từ sessionStorage
+    let cart = [];
+    try {
+        cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+    } catch (error) {
+        console.error("Failed to parse cart data:", error);
+        cart = [];
+    }
     // Reset nội dung cũ để tránh nhân đôi
     cartContainer.innerHTML = "";
     let total = 0;
@@ -34,12 +40,15 @@ function loadCart() {
             total += parseInt(item.price.replace('đ', '').replace('.', '')) * item.quantity;
 
             const cartItem = document.createElement("div");
-            cartItem.className = "cart-item";
+            cartItem.className="empty-cart"
+            cartItem.id="empty-cart-message"
             cartItem.innerHTML = `
-                <img src="${item.image}" alt="${item.name}">
-                <div class="cart-item-info">
-                    <h4>${item.name}</h4>
-                    <p>${item.price} x ${item.quantity}</p>
+                <div class="cart-item__image">
+                    <img src="${item.image}" alt="${item.name}">
+                </div>
+                <div class="cart-item__details">
+                    <h4 class="cart-item__name">${item.name}</h4>
+                    <p class="cart-item__price">${item.price} x ${item.quantity}</p>
                 </div>
             `;
             cartContainer.appendChild(cartItem);

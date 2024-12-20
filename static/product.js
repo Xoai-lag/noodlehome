@@ -36,7 +36,7 @@ function changeQuantity(delta) {
 }
 // Lấy thông tin từ trang và thêm vào giỏ hàng
 function addToCart() {
-    alert("Ham nay da duoc goi");
+
     // Lấy dữ liệu sản phẩm
     const productName = document.getElementById("product-name").innerText;
     const productPrice = document.getElementById("product-price").innerText;
@@ -67,4 +67,5 @@ function addToCart() {
 
     // Thông báo cho người dùng
     alert("Đã thêm vào giỏ hàng!");
+    goBack();
 }
