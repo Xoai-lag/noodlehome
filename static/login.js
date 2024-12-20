@@ -40,6 +40,9 @@ function jsloginhandler(e) {
                 alert(data.error); // Hiển thị lỗi nếu đăng nhập thất bại
             }
         })
+
+
+
         .catch(error => {
             console.error("Lỗi khi đăng nhập:", error);
             alert("Đã xảy ra lỗi. Vui lòng thử lại sau.");

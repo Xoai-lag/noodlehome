@@ -73,6 +73,7 @@
   },
   {
     "id_u": "12",
+<<<<<<< HEAD
     "full_name_u": "Duy",
     "password_u": "098098",
     "email_u": "nguyenvanduy176@gmail.com"
@@ -82,5 +83,10 @@
     "full_name_u": "dsadsa",
     "password_u": "0980987",
     "email_u": "nguyenvanduy17a6@gmail.com"
+  {
+    "full_name_u": "khoi4",
+    "password_u": "123456789",
+    "email_u": "dh52200928@gmail.com"
+  
   }
 ]

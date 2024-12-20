@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chi tiết sản phẩm</title>
     <link rel="stylesheet" href="/static/product.css">
-    <script src="/static/product.js"></script>
 </head>
 <body>
 <div class="container">
@@ -29,8 +28,9 @@
             <span id="quantity" class="quantity">1</span>
             <button class="plus-btn" onclick="changeQuantity(1)">+</button>
         </div>
-        <button class="add-to-cart" onclick="addToCart()">Thêm vào giỏ</button>
+        <button id="add-to-cart" class="add-to-cart">Thêm vào giỏ</button>
     </div>
 </div>
+<script src="/static/product.js"></script>
 </body>
 </html>

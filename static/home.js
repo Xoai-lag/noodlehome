@@ -9,8 +9,55 @@ window.addEventListener('pageshow', function() {
             const quantitySpan = item.querySelector('.quantity');
             quantitySpan.innerText = quantity;
         });
+        console.log("Session Storage:", sessionStorage.getItem("cart"));
+        loadCart();
     }
 });
+function loadCart() {
+    const cartContainer = document.querySelector(".container_list");
+    const emptyCartMessage = document.getElementById("empty-cart-message");
+    const cartTotalElement = document.querySelector(".cart-total");
+
+// Lấy dữ liệu từ sessionStorage
+    let cart = [];
+    try {
+        cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+    } catch (error) {
+        console.error("Failed to parse cart data:", error);
+        cart = [];
+    }
+    // Reset nội dung cũ để tránh nhân đôi
+    cartContainer.innerHTML = "";
+    let total = 0;
+
+    // Xử lý giỏ hàng trống hoặc có sản phẩm
+    if (cart.length === 0) {
+        emptyCartMessage.style.display = "block";
+        cartTotalElement.innerText = "Tổng: 0đ";
+    } else {
+        emptyCartMessage.style.display = "none";
+        cart.forEach(item => {
+            total += parseInt(item.price.replace('đ', '').replace('.', '')) * item.quantity;
+
+            const cartItem = document.createElement("div");
+            cartItem.className="empty-cart"
+            cartItem.id="empty-cart-message"
+            cartItem.innerHTML = `
+                <div class="cart-item__image">
+                    <img src="${item.image}" alt="${item.name}">
+                </div>
+                <div class="cart-item__details">
+                    <h4 class="cart-item__name">${item.name}</h4>
+                    <p class="cart-item__price">${item.price} x ${item.quantity}</p>
+                </div>
+            `;
+            cartContainer.appendChild(cartItem);
+        });
+
+        // Hiển thị tổng tiền
+        cartTotalElement.innerText = `Tổng: ${total.toLocaleString()}đ`;
+    }
+}
 function changeQuantity(event, action) {
     event.stopPropagation(); // Ngăn sự kiện click lan tỏa lên div cha
     const quantitySpan = event.target.parentElement.querySelector('.quantity');
