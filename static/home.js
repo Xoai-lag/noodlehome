@@ -10,7 +10,45 @@ window.addEventListener('pageshow', function() {
             quantitySpan.innerText = quantity;
         });
     }
+    loadCart();
 });
+function loadCart() {
+    const cartContainer = document.querySelector(".cart-content");
+    const emptyCartMessage = document.getElementById("empty-cart-message");
+    const cartTotalElement = document.querySelector(".cart-total");
+
+    // Lấy dữ liệu từ sessionStorage
+    const cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+
+    // Reset nội dung cũ để tránh nhân đôi
+    cartContainer.innerHTML = "";
+    let total = 0;
+
+    // Xử lý giỏ hàng trống hoặc có sản phẩm
+    if (cart.length === 0) {
+        emptyCartMessage.style.display = "block";
+        cartTotalElement.innerText = "Tổng: 0đ";
+    } else {
+        emptyCartMessage.style.display = "none";
+        cart.forEach(item => {
+            total += parseInt(item.price.replace('đ', '').replace('.', '')) * item.quantity;
+
+            const cartItem = document.createElement("div");
+            cartItem.className = "cart-item";
+            cartItem.innerHTML = `
+                <img src="${item.image}" alt="${item.name}">
+                <div class="cart-item-info">
+                    <h4>${item.name}</h4>
+                    <p>${item.price} x ${item.quantity}</p>
+                </div>
+            `;
+            cartContainer.appendChild(cartItem);
+        });
+
+        // Hiển thị tổng tiền
+        cartTotalElement.innerText = `Tổng: ${total.toLocaleString()}đ`;
+    }
+}
 function changeQuantity(event, action) {
     event.stopPropagation(); // Ngăn sự kiện click lan tỏa lên div cha
     const quantitySpan = event.target.parentElement.querySelector('.quantity');
