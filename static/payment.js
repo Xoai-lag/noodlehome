@@ -37,20 +37,26 @@ window.onload = function() {
 };
 function goback(){
     window.history.back();
-}
-document.getElementById("finish").addEventListener("click", function () {
-    // Lấy dữ liệu từ giỏ hàng
-    let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+}document.getElementById("finish").addEventListener("click", function () {
+    const cart = JSON.parse(sessionStorage.getItem("cart")) || [];
 
     if (cart.length === 0) {
         alert("Giỏ hàng trống! Vui lòng thêm sản phẩm vào giỏ hàng.");
         return;
     }
 
-    // Tính tổng tiền
-    let total = cart.reduce((sum, item) => {
-        return sum + parseInt(item.price.replace('đ', '').replace('.', '')) * item.quantity;
+    const total = cart.reduce((sum, item) => {
+        const price = parseInt(item.price.replace(/[^\d]/g, ''), 10); // Loại bỏ ký tự không phải số
+        if (isNaN(price)) {
+            console.error("Giá trị không hợp lệ trong giỏ hàng:", item.price);
+            return sum; // Bỏ qua sản phẩm này
+        }
+        return sum + price * item.quantity;
     }, 0);
+
+    // Kiểm tra lại dữ liệu trước khi gửi lên server
+    console.log("Giỏ hàng:", cart);
+    console.log("Tổng tiền:", total);
 
     // Lấy email của user từ API `/emailuserinfo`
     fetch('/emailuserinfo', {
@@ -60,11 +66,18 @@ document.getElementById("finish").addEventListener("click", function () {
         },
     })
         .then(response => {
-            if (!response.ok) throw new Error("Không thể lấy thông tin người dùng.");
+            if (!response.ok) {
+                console.error("Lỗi khi lấy thông tin người dùng:", response);
+                throw new Error("Không thể lấy thông tin người dùng.");
+            }
             return response.json();
         })
         .then(data => {
             const email = data.email;
+            if (!email) {
+                throw new Error("Không tìm thấy email người dùng.");
+            }
+
             // Chuẩn bị dữ liệu để gửi lên server
             const checkoutData = {
                 cart: cart,
@@ -72,8 +85,10 @@ document.getElementById("finish").addEventListener("click", function () {
                 email: email,
             };
 
+            console.log("Dữ liệu thanh toán gửi lên server:", checkoutData);
+
             // Gửi dữ liệu thanh toán về backend
-            return fetch('/checkout', {
+            return fetch('http://localhost:8080/checkout', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -82,21 +97,22 @@ document.getElementById("finish").addEventListener("click", function () {
             });
         })
         .then(response => {
-            if (!response.ok) throw new Error("Thanh toán thất bại.");
+            if (!response.ok) {
+                return response.json().then(errData => {
+                    console.error("Lỗi khi thanh toán:", errData);
+                    throw new Error(errData.error || "Thanh toán thất bại.");
+                });
+            }
             return response.json();
         })
         .then(data => {
-            // Xử lý khi thanh toán thành công
             alert("Thanh toán thành công! Mã đơn hàng: " + data.orderId);
-
-            // Xóa giỏ hàng
             sessionStorage.removeItem("cart");
-
-            // Chuyển hướng về trang xác nhận đơn hàng
-            window.location.href = "/home";
+            document.location.href = "/home";
         })
         .catch(error => {
-            console.error("Lỗi thanh toán:", error);
-            alert("Đã xảy ra lỗi khi thanh toán. Vui lòng thử lại.");
+            console.error("Lỗi thanh toán:", error.message);
+            alert(error.message || "Đã xảy ra lỗi khi thanh toán. Vui lòng thử lại.");
         });
 });
+
