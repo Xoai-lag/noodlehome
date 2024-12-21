@@ -259,16 +259,20 @@
 
 /* Sản phẩm trong giỏ hàng */
 .cart-item {
-    display: flex;
-    gap: 10px;
+    display: block;
+    gap: 72px;
     border-bottom: 1px solid #eee;
     padding: 10px 0;
-    align-items: center;
+    align-items: end;
 }
 
-.cart-item img {
-    width: 50px;
-    height: 50px;
+.cart-item-list{
+    position: relative;
+}
+
+.cart-item__image {
+    width: 10px;
+    height: 10px;
     border-radius: 5px;
 }
 
@@ -287,6 +291,7 @@
     font-weight: bold;
 }
 
+
 /* Tổng tiền */
 .cart-total {
     text-align: right;
@@ -302,21 +307,7 @@
     display: block;
 }
 
-/* Nội dung giỏ hàng */
-.cart-content p {
-    margin: 0;
-    text-align: center;
-    font-size: 18px;
-    color: #555;
-}
 
-/* Ảnh trong giỏ hàng */
-.cart-content img {
-    display: block;
-    margin: 0 auto 10px;
-    width: 80px;
-    height: auto;
-}
 
 .notification-dot {
     position: absolute;
@@ -327,6 +318,62 @@
     background-color: red;
     border-radius: 50%;
     border: 2px solid white;
+}
+
+.checkout-btn {
+    left: calc(100% - 105px);
+    position: relative;
+    background-color: #ff5a2b;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Xóa khoảng trống bên trái của danh sách sản phẩm */
+.cart-filled ul {
+    list-style-type: none;
+    padding: 0; /* Xóa khoảng cách bên trong */
+    margin: 0; /* Xóa khoảng cách bên ngoài */
+}
+
+/* Căn chỉnh từng mục sản phẩm */
+.cart-filled ul li {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 10px; /* Tạo khoảng cách giữa các sản phẩm */
+}
+
+/* Định dạng ảnh sản phẩm */
+.cart-filled ul li img {
+    width: 70px;
+
+    border-radius: 5px;
+    margin-right: 10px; /* Tạo khoảng cách giữa ảnh và thông tin */
+}
+
+/* Phần thông tin sản phẩm */
+.product-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Căn thông tin giữa theo chiều dọc */
+}
+
+/* Tên sản phẩm */
+.product-name {
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Số lượng sản phẩm */
+.product-quantity {
+    font-size: 12px;
+    color: #555;
+    margin-top: 2px; /* Tạo khoảng cách nhỏ giữa tên và số lượng */
 }
 
 /* Header Notification */
