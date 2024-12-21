@@ -25,10 +25,14 @@ func main() {
 	r.GET("/product", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "product.html", nil)
 	})
+	r.GET("/payment", func(c *gin.Context) {
+		c.HTML(http.StatusOK, "payment.html", nil)
+	})
 	r.GET("/emailuserinfo", api.EmailUserInfo)
 	r.GET("/checkcookie", api.CheckCookieuser)
 	r.POST("/login", api.LoginHandler)
 	r.POST("/register", api.RegisterHandler)
+	r.POST("/checkout", api.CheckoutHandler)
 	r.LoadHTMLGlob("templates/*.html")
 	r.Run()
 }

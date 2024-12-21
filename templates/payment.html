@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="container">
-    <a href="" class="back-link">&larr; Quay lại</a>
+    <a href="/home" class="back-link">&larr; Quay lại</a>
     <div class="section">
         <h3>Thông tin khách hàng</h3>
         <label for="address">Địa chỉ</label>
@@ -22,25 +22,15 @@
         </select>
     </div>
 
-    <div class="section">
+    <div class="section" id="section">
         <h3>Món đã chọn</h3>
-        <div class="summary">
-            <div class="summary-item">
-                <span>MÌ Ý HÀI SẢN</span>
-                <span>65.000đ</span>
-            </div>
-            <div class="summary-item">
-                <span>Phí vận chuyển</span>
-                <span>0đ</span>
-            </div>
-            <div class="summary-item">
-                <span>Tổng cộng</span>
-                <span>65.000đ</span>
-            </div>
+        <div class="summary" id="summary">
+
         </div>
     </div>
 
-    <button class="btn">Bạn muốn đặt hàng?</button>
+    <button class="btn" id="finish">Thanh Toán Hóa Đơn</button>
 </div>
+<script src="/static/payment.js"></script>
 </body>
 </html>

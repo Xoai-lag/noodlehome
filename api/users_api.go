@@ -28,6 +28,7 @@ func LoginHandler(c *gin.Context) {
 		if existingUser.Email_u == user.Email_u && existingUser.Password_u == user.Password_u {
 			session := sessions.Default(c)
 			session.Set("user_email", existingUser.Email_u)
+			session.Set("user_id", existingUser.Id_u)
 			session.Set("user_name", existingUser.Full_name_u)
 			err := session.Save()
 			if err != nil {

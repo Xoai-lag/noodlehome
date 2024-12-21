@@ -4,10 +4,10 @@ window.addEventListener('pageshow', function() {
         // Xóa cờ reload
         sessionStorage.removeItem('reloadHome');
         document.querySelectorAll('.home-product-item').forEach(item => {
-            const productName = item.getAttribute('data-product-name');
-            const quantity = sessionStorage.getItem(`${productName}-quantity`) || 0;
+            const productId = item.getAttribute('data-id');
+            const quantity = sessionStorage.getItem(`${productId}-quantity`) || 0;
             const quantitySpan = item.querySelector('.quantity');
-            quantitySpan.innerText = quantity;
+            quantitySpan.innerText = quantity; // Hiển thị số lượng từ sessionStorage
         });
         console.log("Session Storage:", sessionStorage.getItem("cart"));
         loadCart();
@@ -76,19 +76,26 @@ function changeQuantity(event, action) {
     // Lưu số lượng vào sessionStorage
     const productItem = event.target.closest('.home-product-item');
     const productName = productItem.getAttribute('data-product-name');
-    sessionStorage.setItem(`${productName}-quantity`, quantity);
+    const productId = productItem.getAttribute('data-id'); // Lấy ID món ăn
+    sessionStorage.setItem(`${productId}-quantity`, quantity); // Lưu theo ID
+    sessionStorage.setItem(`${productName}-id`, productId); // Đảm bảo tên gắn với ID
 }
 
 function selectProduct(name, image, price) {
     // Lấy số lượng từ sessionStorage
-    const quantity = sessionStorage.getItem(`${name}-quantity`) || 1;
+    const productItem = document.querySelector(`[data-product-name="${name}"]`);
+    const productId = productItem.getAttribute('data-id'); // Lấy ID món ăn
+    const quantity = sessionStorage.getItem(`${productId}-quantity`) || 1;
 
     // Lưu thông tin vào sessionStorage
+    sessionStorage.setItem('productId', productId); // Lưu ID món ăn
     sessionStorage.setItem('productName', name);
     sessionStorage.setItem('productImage', image);
     sessionStorage.setItem('productPrice', price);
     sessionStorage.setItem('productQuantity', quantity);
 
+
     // Chuyển đến trang chi tiết sản phẩm
     window.location.href = '/product';
 }
+

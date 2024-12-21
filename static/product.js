@@ -2,6 +2,7 @@ window.onload = function() {
     const productName = sessionStorage.getItem('productName');
     const productImage = sessionStorage.getItem('productImage');
     const productPrice = sessionStorage.getItem('productPrice');
+    const prodductId = sessionStorage.getItem('prodductId');
     const productQuantity = sessionStorage.getItem('productQuantity') || 1;
     // Hiển thị dữ liệu lên trang
     document.getElementById('product-name').innerText = productName;
@@ -30,9 +31,9 @@ function changeQuantity(delta) {
     quantitySpan.innerText = quantity;
 
     // Lưu lại vào sessionStorage
-    const productName = sessionStorage.getItem('productName');
-    sessionStorage.setItem(`${productName}-quantity`, quantity);
-    sessionStorage.setItem('productQuantity', quantity);
+    const productId = sessionStorage.getItem('productId'); // Lấy ID từ sessionStorage
+    sessionStorage.setItem(`${productId}-quantity`, quantity); // Lưu số lượng
+    sessionStorage.setItem('productQuantity', quantity); // Đồng bộ
 }
 // Lấy thông tin từ trang và thêm vào giỏ hàng
 function addToCart() {
@@ -44,7 +45,9 @@ function addToCart() {
     const quantity = parseInt(document.getElementById("quantity").innerText);
 
     // Tạo object món ăn
+    const productId = sessionStorage.getItem('productId'); // Lấy ID món ăn
     const newItem = {
+        id: productId, // Sử dụng ID
         name: productName,
         price: productPrice,
         image: productImage,
@@ -55,7 +58,7 @@ function addToCart() {
     let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
 
     // Kiểm tra xem sản phẩm đã tồn tại chưa, nếu có tăng số lượng
-    const existingItem = cart.find(item => item.name === newItem.name);
+    const existingItem = cart.find(item => item.id === newItem.id);
     if (existingItem) {
         existingItem.quantity += quantity;
     } else {
@@ -66,6 +69,5 @@ function addToCart() {
     sessionStorage.setItem("cart", JSON.stringify(cart));
 
     // Thông báo cho người dùng
-    alert("Đã thêm vào giỏ hàng!");
     goBack();
 }

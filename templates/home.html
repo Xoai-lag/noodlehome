@@ -137,7 +137,7 @@
             <div class="header__cart">
                 <!-- Nút Giỏ Hàng -->
                 <div class="cart-container">
-                    <button class="cart-button">
+                    <button class="cart-button" id="cart-button" >
                         <i>🛒</i> Giỏ Hàng
                         <span class="notification-dot"></span>
                     </button>
@@ -207,7 +207,7 @@
                     <div class="grid__row" data-category="Tất-cả" >
                         <div class="grid__column-2-4" onclick="selectProduct('MÌ Ý PENNE','https://media-cdn-v2.laodong.vn/storage/newsportal/2022/6/20/1058473/Mi-Y-Tom-Ap-Chao-Sot.jpg?w=800&h=496&crop=auto&scale=both','45.000đ')">
                             <!-- Product Items -->
-                            <div class="home-product-item" data-product-name="MÌ Ý PENNE" data-category="mì-khô" >
+                            <div class="home-product-item" data-product-name="MÌ Ý PENNE" data-id="1" data-category="mì-khô" >
                                 <div class="home-product-item__img" style="background-image:url(https://media-cdn-v2.laodong.vn/storage/newsportal/2022/6/20/1058473/Mi-Y-Tom-Ap-Chao-Sot.jpg?w=800&h=496&crop=auto&scale=both) ;"></div>
                                 <h5 class="home-product-item__name">MÌ Ý PENNE</h5>
                                 <span class="home-product-item__price">45.000đ</span>
@@ -222,7 +222,7 @@
 
                         <div class="grid__column-2-4" onclick="selectProduct('MÌ QUẢNG','https://culaochamtourist.vn/wp-content/uploads/2022/10/mi-quang-hoi-an-2.jpg.jpg','45.000đ')">
                             <!-- Product Items -->
-                            <div class="home-product-item " data-product-name="MÌ QUẢNG" data-category="mì-nước">
+                            <div class="home-product-item " data-product-name="MÌ QUẢNG" data-id="2" data-category="mì-nước">
                                 <div class="home-product-item__img" style="background-image:url(https://culaochamtourist.vn/wp-content/uploads/2022/10/mi-quang-hoi-an-2.jpg.jpg) ;"></div>
                                 <h5 class="home-product-item__name">MÌ QUẢNG</h5>
                                 <span class="home-product-item__price">45.000đ</span>
@@ -235,7 +235,7 @@
                         </div>
                         <div class="grid__column-2-4" onclick="selectProduct('MÌ Ý THỊT BẰM','https://cdn.nguyenkimmall.com/images/companies/_1/tin-tuc/kinh-nghiem-meo-hay/n%E1%BA%A5u%20%C4%83n/mi-Y-so-bo-bam.jpeg.jpg','55.000đ')">
                             <!-- Product Items -->
-                            <div class="home-product-item" data-product-name="MÌ Ý THỊT BẰM" data-category="mì-khô">
+                            <div class="home-product-item" data-product-name="MÌ Ý THỊT BẰM" data-id="3" data-category="mì-khô">
                                 <div class="home-product-item__img" style="background-image:url(https://cdn.nguyenkimmall.com/images/companies/_1/tin-tuc/kinh-nghiem-meo-hay/n%E1%BA%A5u%20%C4%83n/mi-Y-so-bo-bam.jpeg.jpg) ;"></div>
                                 <h5 class="home-product-item__name">MÌ Ý THỊT BẰM</h5>
                                 <span class="home-product-item__price">55.000đ</span>
@@ -248,7 +248,7 @@
                         </div>
                         <div class="grid__column-2-4" onclick="selectProduct('MÌ Ý HẢI SẢN','https://cdn.nguyenkimmall.com/images/companies/_1/tin-tuc/kinh-nghiem-meo-hay/n%E1%BA%A5u%20%C4%83n/mi-Y-hai-san.jpg.jpg','65.000đ')">
                             <!-- Product Items -->
-                            <div class="home-product-item" data-product-name="MÌ Ý HẢI SẢN" data-category="mì-khô">
+                            <div class="home-product-item" data-product-name="MÌ Ý HẢI SẢN" data-id="4" data-category="mì-khô">
                                 <div class="home-product-item__img" style="background-image:url(https://cdn.nguyenkimmall.com/images/companies/_1/tin-tuc/kinh-nghiem-meo-hay/n%E1%BA%A5u%20%C4%83n/mi-Y-hai-san.jpg.jpg) ;"></div>
                                 <h5 class="home-product-item__name">MÌ Ý HẢI SẢN</h5>
                                 <span class="home-product-item__price">65.000đ</span>
@@ -261,7 +261,7 @@
                         </div>
                         <div class="grid__column-2-4" onclick="selectProduct('MÌ Ý SỐT KEM','https://cdn.nguyenkimmall.com/images/companies/_1/tin-tuc/kinh-nghiem-meo-hay/n%E1%BA%A5u%20%C4%83n/mi-Y-sot-kem.jpg.jpg','60.000đ')">
                             <!-- Product Items -->
-                            <div class="home-product-item" data-product-name="MÌ Ý SỐT KEM" data-category="mì-khô">
+                            <div class="home-product-item" data-product-name="MÌ Ý SỐT KEM" data-id="5" data-category="mì-khô">
                                 <div class="home-product-item__img" style="background-image:url(https://cdn.nguyenkimmall.com/images/companies/_1/tin-tuc/kinh-nghiem-meo-hay/n%E1%BA%A5u%20%C4%83n/mi-Y-sot-kem.jpg.jpg) ;"></div>
                                 <h5 class="home-product-item__name">MÌ Ý SỐT KEM</h5>
                                 <span class="home-product-item__price">60.000đ</span>
@@ -276,7 +276,7 @@
 
                         <div class="grid__column-2-4" onclick="selectProduct('RAMEN MISO','https://cdn.tgdd.vn/Files/2018/04/01/1078986/bat-mi-nhung-nguyen-lieu-nau-mi-ramen-chuan-vi-nhat-ban1_800x450.jpg','70.000đ')">
                             <!-- Product Items -->
-                            <div class="home-product-item" data-product-name="RAMEN MISO" data-category="mì-nước">
+                            <div class="home-product-item" data-product-name="RAMEN MISO" data-id="6" data-category="mì-nước">
                                 <div class="home-product-item__img" style="background-image:url(https://cdn.tgdd.vn/Files/2018/04/01/1078986/bat-mi-nhung-nguyen-lieu-nau-mi-ramen-chuan-vi-nhat-ban1_800x450.jpg) ;"></div>
                                 <h5 class="home-product-item__name">RAMEN MISO</h5>
                                 <span class="home-product-item__price">70.000đ</span>
@@ -290,7 +290,7 @@
 
                         <div class="grid__column-2-4" onclick="selectProduct('MÌ THÊM','https://mituoi.com.vn/upload/product/11-5751.jpg','10.000đ')">
                             <!-- Product Items -->
-                            <div class="home-product-item" data-product-name="MÌ THÊM" data-category="thức-ăn-thêm">
+                            <div class="home-product-item" data-product-name="MÌ THÊM" data-id="7" data-category="thức-ăn-thêm">
                                 <div class="home-product-item__img" style="background-image:url(https://mituoi.com.vn/upload/product/11-5751.jpg) ;"></div>
                                 <h5 class="home-product-item__name">MÌ THÊM</h5>
                                 <span class="home-product-item__price">10.000đ</span>
@@ -304,7 +304,7 @@
 
                         <div class="grid__column-2-4" onclick="selectProduct('MÌ Ý THÊM','https://cdn.tgdd.vn/2021/06/CookProduct/thumbcmscn.jpg1-1200x676.jpg','15.000đ')">
                             <!-- Product Items -->
-                            <div class="home-product-item" data-product-name="MÌ Ý THÊM" data-category="thức-ăn-thêm">
+                            <div class="home-product-item" data-product-name="MÌ Ý THÊM" data-id="8" data-category="thức-ăn-thêm">
                                 <div class="home-product-item__img" style="background-image:url(https://cdn.tgdd.vn/2021/06/CookProduct/thumbcmscn.jpg1-1200x676.jpg) ;"></div>
                                 <h5 class="home-product-item__name">MÌ Ý THÊM</h5>
                                 <span class="home-product-item__price">15.000đ</span>
@@ -316,9 +316,9 @@
                             </div>
                         </div>
 
-                        <div class="grid__column-2-4" onclick="selectProduct('TRÀ ','https://file.hstatic.net/1000339999/file/cach-lam-tra-tac-kinh-doanh_6b3edf3123da41ef8db3b2cd02750f84_grande.png','20.000đ')">
+                        <div class="grid__column-2-4" onclick="selectProduct('TRÀ TẮC','https://file.hstatic.net/1000339999/file/cach-lam-tra-tac-kinh-doanh_6b3edf3123da41ef8db3b2cd02750f84_grande.png','20.000đ')">
                             <!-- Product Items -->
-                            <div class="home-product-item" data-product-name="Trà tắc" data-category="thức-uống">
+                            <div class="home-product-item" data-product-name="TRÀ TẮC" data-id="9" data-category="thức-uống">
                                 <div class="home-product-item__img" style="background-image:url(https://file.hstatic.net/1000339999/file/cach-lam-tra-tac-kinh-doanh_6b3edf3123da41ef8db3b2cd02750f84_grande.png) ;"></div>
                                 <h5 class="home-product-item__name">Trà tắc</h5>
                                 <span class="home-product-item__price">20.000đ</span>
@@ -332,7 +332,7 @@
 
                         <div class="grid__column-2-4" onclick="selectProduct('TRÀ SỮA MẬT ONG','https://simexcodl.com.vn/wp-content/uploads/2024/05/tra-sua-ca-phe-2.jpg','35.000đ')">
                             <!-- Product Items -->
-                            <div class="home-product-item" data-product-name="TRÀ SỮA MẬT ONG" data-category="thức-uống">
+                            <div class="home-product-item" data-product-name="TRÀ SỮA MẬT ONG" data-id="10" data-category="thức-uống">
                                 <div class="home-product-item__img" style="background-image:url(https://simexcodl.com.vn/wp-content/uploads/2024/05/tra-sua-ca-phe-2.jpg) ;"></div>
                                 <h5 class="home-product-item__name">TRÀ SỮA MẬT ONG</h5>
                                 <span class="home-product-item__price">35.000đ</span>
@@ -410,5 +410,9 @@
             });
         });
     });
+    const pbutton=document.getElementById('cart-button')
+    pbutton.addEventListener('click', function(){
+        window.location.href = '/payment';
+    })
 </script>
 </html>
