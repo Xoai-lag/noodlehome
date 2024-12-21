@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Project</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <!-- Form 1 -->
+    <form id="form1" method="POST" action="/register">
+        <h1>Register</h1>
+        <div class="input-field">
+            <input type="email" name="email" required id="email">
+            <label>Email</label>
+        </div>
+        <div class="input-field">
+            <input type="password" name="password" required id="password">
+            <label>Password</label>
+        </div>
+        <div class="input-field">
+            <input type="password" name="confirm_password" required id="cfpassword">
+            <label>Confirm Password</label>
+        </div>
+        <button type="button" id="nextBtn" disabled>Next</button>
+    </form>
+
+    <!-- Form 2 -->
+    <form id="form2" method="POST" action="/register" class="hidden">
+        <h1>Register</h1>
+        <div class="input-field">
+            <input type="text" id="name" required name="name">
+            <label>Enter Name</label>
+        </div>
+            <button type="submit" >Register</button>
+            <button class="btn--left-arrow" type="button" id="backBtn">&#8592;</button> <!-- Mũi tên quay lại -->
+    </form>
+
+    <div>
+        <p>Already have an account?</p>
+        <a href="/login">Log in</a>
+    </div>
+</div>
+<script src="/static/register.js"></script>
+</body>
+</html>

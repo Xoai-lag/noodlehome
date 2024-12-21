@@ -2,24 +2,26 @@
 <html>
 
 <head>
-    <title>Web project </title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css">
+    <title>Web Project</title>
+    <!-- Đường dẫn tới file CSS -->
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 
 <body>
 <div class="wrapper">
-    <form action="#">
+    <form id="loginForm" method="POST" action="/login">
         <h1>Welcome</h1>
         <div class="input-field">
-            <input type="text" required>
+            <input type="email" name="gmail" id="emaillogin">
             <label>Enter your email</label>
         </div>
 
         <div class="input-field">
-            <input type="password" required>
+            <input type="password" name="pass" id="passwordlogin">
+
             <label>Enter your password</label>
         </div>
+
         <div class="forget">
             <label for="remember">
                 <input type="checkbox" id="remember">
@@ -32,9 +34,10 @@
         <button type="submit">Log in</button>
         <div class="register">
             <p>Don't have an account</p>
-            <a href="#">Register</a>
+            <a href="/register">Register</a>
         </div>
     </form>
 </div>
+<script src="/static/login.js"></script>
 </body>
 </html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết sản phẩm</title>
+    <link rel="stylesheet" href="/static/product.css">
+</head>
+<body>
+<div class="container">
+    <!-- Nút quay lại -->
+    <button class="back-button" onclick="goBack()">&larr;</button>
+
+    <!-- Hình ảnh món ăn -->
+    <div class="image-container">
+        <img id="product-image" src="">
+        <div class="image-caption">
+            <h2 id="product-name"></h2>
+            <p id="product-price" class="price"></p>
+        </div>
+    </div>
+
+    <!-- Ghi chú và nút thêm vào giỏ -->
+    <div class="order-section">
+        <input type="text" class="note-input" placeholder="Ghi chú món ăn">
+        <div class="quantity-control">
+            <button class="minus-btn" onclick="changeQuantity(-1)">–</button>
+            <span id="quantity" class="quantity">1</span>
+            <button class="plus-btn" onclick="changeQuantity(1)">+</button>
+        </div>
+        <button id="add-to-cart" class="add-to-cart">Thêm vào giỏ</button>
+    </div>
+</div>
+<script src="/static/product.js"></script>
+</body>
+</html>

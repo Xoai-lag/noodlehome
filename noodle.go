@@ -1,20 +1,34 @@
 package main
 
 import (
-	"fmt"
+	"github.com/gin-contrib/sessions"
+	"github.com/gin-contrib/sessions/cookie"
+	"github.com/gin-gonic/gin"
 	"net/http"
+	"noodlehome/api"
 )
 
 func main() {
-	// Serve static files
-	fs := http.FileServer(http.Dir("./static"))
-	http.Handle("/", fs)
-
-	// Start the server
-	port := ":8080"
-	fmt.Printf("Server running at http://localhost%s\n", port)
-	err := http.ListenAndServe(port, nil)
-	if err != nil {
-		fmt.Println("Error starting server:", err)
-	}
+	r := gin.Default()
+	r.Static("/static", "./static")
+	store := cookie.NewStore([]byte("mysecretkey"))
+	r.Use(sessions.Sessions("mysession", store))
+	r.GET("/login", func(c *gin.Context) {
+		c.HTML(http.StatusOK, "login.html", nil)
+	})
+	r.GET("/register", func(c *gin.Context) {
+		c.HTML(http.StatusOK, "register.html", nil)
+	})
+	r.GET("/home", func(c *gin.Context) {
+		c.HTML(http.StatusOK, "home.html", nil)
+	})
+	r.GET("/product", func(c *gin.Context) {
+		c.HTML(http.StatusOK, "product.html", nil)
+	})
+	r.GET("/emailuserinfo", api.EmailUserInfo)
+	r.GET("/checkcookie", api.CheckCookieuser)
+	r.POST("/login", api.LoginHandler)
+	r.POST("/register", api.RegisterHandler)
+	r.LoadHTMLGlob("templates/*.html")
+	r.Run()
 }

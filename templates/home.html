@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIỆM MÌ NHÀ TỚ</title>
+    <link rel="stylesheet" href="/static/base main interface.css">
+    <link rel="stylesheet" href="/static/main interface.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/static/font/fontawesome-free-6.7.1-web/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css">
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="/static/home.js"></script>
+</head>
+<body>
+<div class="app">
+    <header class="header">
+        <div class="grid">
+            <nav class="header__navbar">
+                <ul class="header__navbar-list">
+                    <li class="header__navbar-item header__navbar-item--no-pointer  header__navbar-item--separate">
+                        Tiệm mì Nhà tớ
+                    </li>
+                    <li class="header__navbar-item">
+                            <span class="header__navbar-item-title--no-pointer ">
+                                Connect
+
+                            </span>
+                        <a href="" class="header__navbar-icon-link">
+<!--                            <i class="header__navbar-icon fa-brands fa-square-facebook"></i>-->
+                            <i class="header__navbar-icon fa-brands fa-facebook"></i>
+                        </a>
+                    </li>
+
+                </ul>
+
+                <ul class="header__navbar-list">
+                    <li class="header__navbar-item header__navbar-item--has-notify">
+                        <i class="header__navbar-icon fa-regular fa-bell"></i>
+                        <a href="" class="header__navbar-item-link">
+                            Thông báo</a>
+                        <div class="header__notify">
+                            <header class="header__notify-header">
+                                <h3>Thông báo mới nhận</h3>
+                            </header>
+                            <ul class="header__notify-list">
+                                <li class="header__notify-item header__notify-item--viewed">
+                                    <a href="" class="header__notify-link">
+                                        <img src="https://cdn.tgdd.vn/2021/02/CookProduct/1200-1200x676-16.jpg" alt="Mì Quảng" class="header__notify-img">
+                                        <div class="header__notify-info">
+                                            <span class="header__notify-name">Mỳ Quảng Đặc Biệt</span>
+                                            <span class="header__notify-description">Hương vị quen thuộc từ quê hương Quảng Nam</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="header__notify-item header__notify-item--viewed">
+                                    <a href="" class="header__notify-link">
+                                        <img src="https://cdn.tgdd.vn/2021/02/CookProduct/1200-1200x676-16.jpg" alt="Mì Quảng" class="header__notify-img">
+                                        <div class="header__notify-info">
+                                            <span class="header__notify-name">Mỳ Quảng Đặc Biệt</span>
+                                            <span class="header__notify-description">Hương vị quen thuộc từ quê hương Quảng Nam</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="header__notify-item header__notify-item--viewed">
+                                    <a href="" class="header__notify-link">
+                                        <img src="https://cdn.tgdd.vn/2021/02/CookProduct/1200-1200x676-16.jpg" alt="Mì Quảng" class="header__notify-img">
+                                        <div class="header__notify-info">
+                                            <span class="header__notify-name">Mỳ Quảng Đặc Biệt</span>
+                                            <span class="header__notify-description">Hương vị quen thuộc từ quê hương Quảng Nam</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <footer class="header__notify-footer">
+                                <a href="" class="header__notify-footer-btn">
+                                    Xem tất cả
+                                </a>
+                            </footer>
+                        </div>
+                    </li>
+                    <!-- <li class="header__navbar-item header__navbar-item--strong header__navbar-item--separate">Đăng nhập</li>
+                    <li class="header__navbar-item header__navbar-item--strong">Đăng ký</li> -->
+                    <li>
+                        <div class="header__navbar-item header__navbar-user">
+                            <img src="/static/img/user.png" alt="" class="header__navbar-user-img">
+                            <span class="header__navbar-user-name " id="usermail"></span>
+
+                            <ul class="header__navbar-user-menu">
+
+                                <li class="header__navbar-user-item">
+                                    <a href="">Tài khoản</a>
+                                </li>
+
+                                <li class="header__navbar-user-item">
+                                    <a href="/login">Đăng xuất</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header__info">
+
+                <div class=" header__info-logo">
+
+                    <div class="header__info header__info-img">
+                        <img src="/static/img/Noodle-removebg-preview.png" alt="" class="header__logo-img-noodlelogo">
+                    </div>
+
+                </div>
+
+                <div class="header__info header__info-first">
+                    <ul class="header__info-list">
+                        <li class="header__info header__info-first header__info-img header__info-list">
+                            <img src="/static/img/store.png" alt="" class="header__info-img-store">
+                            <span class="header__info-img-text">ĐC: 9/5 Cao Lỗ, Phường 4, Quận 8, TP.HCM</span>
+                        </li>
+
+                        <li class="header__info header__info-first header__info-img header__info-list">
+                            <img src="/static/img/clock.png" alt="" class="header__info-img-store" >
+                            <span class="header__info-img-text">Mở cửa: 11h - 22h</span>
+                        </li>
+
+                        <li class="header__info header__info-first header__info-img header__info-list">
+                            <img src="/static/img/phone-call.png" alt="" class="header__info-img-store" >
+                            <span class="header__info-img-text">SĐT: 0988776554321</span>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+
+            <div class="header__cart">
+                <!-- Nút Giỏ Hàng -->
+                <div class="cart-container">
+                    <button class="cart-button">
+                        <i>🛒</i> Giỏ Hàng
+                        <span class="notification-dot"></span>
+                    </button>
+                    <div class="container_list" id="container_list_id">
+                    <!-- Nội dung Giỏ Hàng -->
+                    <div class="cart-content" id="cart-content">
+                        <div id="empty-cart-message" class="empty-cart" style="display: block">
+                            <img src="https://cdn-icons-png.flaticon.com/512/1170/1170576.png" alt="Empty Cart">
+                            <p>Chưa Có Sản Phẩm</p>
+                        </div>
+                    </div>
+                    </div>
+                    <!-- Tổng tiền -->
+                    <div class="cart-total">
+                        Tổng: 0đ
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+
+    <div class="app__container">
+        <div class="grid__row app__content">
+            <div class="grid__column-2">
+                <nav class="category">
+                    <h4 class="category__heading">
+                        <i class="category__heading-icon fa-solid fa-list"></i>
+                        Danh mục
+                    </h4>
+
+                    <ul class="category-list">
+                        <li class="category-item category-item--active">
+                            <a href="#" class="category-item__link" data-category="tất-cả">
+                                Tất cả
+                            </a>
+                        </li>
+
+                        <li class="category-item">
+                            <a href="#" class="category-item__link" data-category="mì-khô">
+                                Mì khô
+                            </a>
+                        </li>
+
+                        <li class="category-item">
+                            <a href="#" class="category-item__link" data-category="mì-nước">
+                                Mì nước
+                            </a>
+                        </li>
+                        <li class="category-item">
+                            <a href="#" class="category-item__link" data-category="thức-uống">
+                                Thức uống
+                            </a>
+                        </li>
+                        <li class="category-item">
+                            <a href="#" class="category-item__link" data-category="thức-ăn-thêm">
+                                Thức ăn thêm
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="grid__column-10">
+                <div class="home-product">
+                    <!--Grid -> Row -> Column  -->
+                    <div class="grid__row" data-category="Tất-cả" >
+                        <div class="grid__column-2-4" onclick="selectProduct('MÌ Ý PENNE','https://media-cdn-v2.laodong.vn/storage/newsportal/2022/6/20/1058473/Mi-Y-Tom-Ap-Chao-Sot.jpg?w=800&h=496&crop=auto&scale=both','45.000đ')">
+                            <!-- Product Items -->
+                            <div class="home-product-item" data-product-name="MÌ Ý PENNE" data-category="mì-khô" >
+                                <div class="home-product-item__img" style="background-image:url(https://media-cdn-v2.laodong.vn/storage/newsportal/2022/6/20/1058473/Mi-Y-Tom-Ap-Chao-Sot.jpg?w=800&h=496&crop=auto&scale=both) ;"></div>
+                                <h5 class="home-product-item__name">MÌ Ý PENNE</h5>
+                                <span class="home-product-item__price">45.000đ</span>
+                                <div class="home-product-item__add" >
+                                    <button class="minus-btn" onclick="changeQuantity(event,'minus')">–</button>
+                                    <span class="quantity">0</span>
+                                    <button class="plus-btn" onclick="changeQuantity(event,'plus')">+</button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="grid__column-2-4" onclick="selectProduct('MÌ QUẢNG','https://culaochamtourist.vn/wp-content/uploads/2022/10/mi-quang-hoi-an-2.jpg.jpg','45.000đ')">
+                            <!-- Product Items -->
+                            <div class="home-product-item " data-product-name="MÌ QUẢNG" data-category="mì-nước">
+                                <div class="home-product-item__img" style="background-image:url(https://culaochamtourist.vn/wp-content/uploads/2022/10/mi-quang-hoi-an-2.jpg.jpg) ;"></div>
+                                <h5 class="home-product-item__name">MÌ QUẢNG</h5>
+                                <span class="home-product-item__price">45.000đ</span>
+                                <div class="home-product-item__add" >
+                                    <button class="minus-btn" onclick="changeQuantity(event,'minus')">–</button>
+                                    <span class="quantity">0</span>
+                                    <button class="plus-btn" onclick="changeQuantity(event,'plus')">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid__column-2-4" onclick="selectProduct('MÌ Ý THỊT BẰM','https://cdn.nguyenkimmall.com/images/companies/_1/tin-tuc/kinh-nghiem-meo-hay/n%E1%BA%A5u%20%C4%83n/mi-Y-so-bo-bam.jpeg.jpg','55.000đ')">
+                            <!-- Product Items -->
+                            <div class="home-product-item" data-product-name="MÌ Ý THỊT BẰM" data-category="mì-khô">
+                                <div class="home-product-item__img" style="background-image:url(https://cdn.nguyenkimmall.com/images/companies/_1/tin-tuc/kinh-nghiem-meo-hay/n%E1%BA%A5u%20%C4%83n/mi-Y-so-bo-bam.jpeg.jpg) ;"></div>
+                                <h5 class="home-product-item__name">MÌ Ý THỊT BẰM</h5>
+                                <span class="home-product-item__price">55.000đ</span>
+                                <div class="home-product-item__add" >
+                                    <button class="minus-btn" onclick="changeQuantity(event,'minus')">–</button>
+                                    <span class="quantity">0</span>
+                                    <button class="plus-btn" onclick="changeQuantity(event,'plus')">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid__column-2-4" onclick="selectProduct('MÌ Ý HẢI SẢN','https://cdn.nguyenkimmall.com/images/companies/_1/tin-tuc/kinh-nghiem-meo-hay/n%E1%BA%A5u%20%C4%83n/mi-Y-hai-san.jpg.jpg','65.000đ')">
+                            <!-- Product Items -->
+                            <div class="home-product-item" data-product-name="MÌ Ý HẢI SẢN" data-category="mì-khô">
+                                <div class="home-product-item__img" style="background-image:url(https://cdn.nguyenkimmall.com/images/companies/_1/tin-tuc/kinh-nghiem-meo-hay/n%E1%BA%A5u%20%C4%83n/mi-Y-hai-san.jpg.jpg) ;"></div>
+                                <h5 class="home-product-item__name">MÌ Ý HẢI SẢN</h5>
+                                <span class="home-product-item__price">65.000đ</span>
+                                <div class="home-product-item__add" >
+                                    <button class="minus-btn" onclick="changeQuantity(event,'minus')">–</button>
+                                    <span class="quantity">0</span>
+                                    <button class="plus-btn" onclick="changeQuantity(event,'plus')">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid__column-2-4" onclick="selectProduct('MÌ Ý SỐT KEM','https://cdn.nguyenkimmall.com/images/companies/_1/tin-tuc/kinh-nghiem-meo-hay/n%E1%BA%A5u%20%C4%83n/mi-Y-sot-kem.jpg.jpg','60.000đ')">
+                            <!-- Product Items -->
+                            <div class="home-product-item" data-product-name="MÌ Ý SỐT KEM" data-category="mì-khô">
+                                <div class="home-product-item__img" style="background-image:url(https://cdn.nguyenkimmall.com/images/companies/_1/tin-tuc/kinh-nghiem-meo-hay/n%E1%BA%A5u%20%C4%83n/mi-Y-sot-kem.jpg.jpg) ;"></div>
+                                <h5 class="home-product-item__name">MÌ Ý SỐT KEM</h5>
+                                <span class="home-product-item__price">60.000đ</span>
+                                <div class="home-product-item__add" >
+                                    <button class="minus-btn" onclick="changeQuantity(event,'minus')">–</button>
+                                    <span class="quantity">0</span>
+                                    <button class="plus-btn" onclick="changeQuantity(event,'plus')">+</button>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="grid__column-2-4" onclick="selectProduct('RAMEN MISO','https://cdn.tgdd.vn/Files/2018/04/01/1078986/bat-mi-nhung-nguyen-lieu-nau-mi-ramen-chuan-vi-nhat-ban1_800x450.jpg','70.000đ')">
+                            <!-- Product Items -->
+                            <div class="home-product-item" data-product-name="RAMEN MISO" data-category="mì-nước">
+                                <div class="home-product-item__img" style="background-image:url(https://cdn.tgdd.vn/Files/2018/04/01/1078986/bat-mi-nhung-nguyen-lieu-nau-mi-ramen-chuan-vi-nhat-ban1_800x450.jpg) ;"></div>
+                                <h5 class="home-product-item__name">RAMEN MISO</h5>
+                                <span class="home-product-item__price">70.000đ</span>
+                                <div class="home-product-item__add" >
+                                    <button class="minus-btn" onclick="changeQuantity(event,'minus')">–</button>
+                                    <span class="quantity">0</span>
+                                    <button class="plus-btn" onclick="changeQuantity(event,'plus')">+</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid__column-2-4" onclick="selectProduct('MÌ THÊM','https://mituoi.com.vn/upload/product/11-5751.jpg','10.000đ')">
+                            <!-- Product Items -->
+                            <div class="home-product-item" data-product-name="MÌ THÊM" data-category="thức-ăn-thêm">
+                                <div class="home-product-item__img" style="background-image:url(https://mituoi.com.vn/upload/product/11-5751.jpg) ;"></div>
+                                <h5 class="home-product-item__name">MÌ THÊM</h5>
+                                <span class="home-product-item__price">10.000đ</span>
+                                <div class="home-product-item__add" >
+                                    <button class="minus-btn" onclick="changeQuantity(event,'minus')">–</button>
+                                    <span class="quantity">0</span>
+                                    <button class="plus-btn" onclick="changeQuantity(event,'plus')">+</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid__column-2-4" onclick="selectProduct('MÌ Ý THÊM','https://cdn.tgdd.vn/2021/06/CookProduct/thumbcmscn.jpg1-1200x676.jpg','15.000đ')">
+                            <!-- Product Items -->
+                            <div class="home-product-item" data-product-name="MÌ Ý THÊM" data-category="thức-ăn-thêm">
+                                <div class="home-product-item__img" style="background-image:url(https://cdn.tgdd.vn/2021/06/CookProduct/thumbcmscn.jpg1-1200x676.jpg) ;"></div>
+                                <h5 class="home-product-item__name">MÌ Ý THÊM</h5>
+                                <span class="home-product-item__price">15.000đ</span>
+                                <div class="home-product-item__add" >
+                                    <button class="minus-btn" onclick="changeQuantity(event,'minus')">–</button>
+                                    <span class="quantity">0</span>
+                                    <button class="plus-btn" onclick="changeQuantity(event,'plus')">+</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid__column-2-4" onclick="selectProduct('TRÀ ','https://file.hstatic.net/1000339999/file/cach-lam-tra-tac-kinh-doanh_6b3edf3123da41ef8db3b2cd02750f84_grande.png','20.000đ')">
+                            <!-- Product Items -->
+                            <div class="home-product-item" data-product-name="Trà tắc" data-category="thức-uống">
+                                <div class="home-product-item__img" style="background-image:url(https://file.hstatic.net/1000339999/file/cach-lam-tra-tac-kinh-doanh_6b3edf3123da41ef8db3b2cd02750f84_grande.png) ;"></div>
+                                <h5 class="home-product-item__name">Trà tắc</h5>
+                                <span class="home-product-item__price">20.000đ</span>
+                                <div class="home-product-item__add" >
+                                    <button class="minus-btn" onclick="changeQuantity(event,'minus')">–</button>
+                                    <span class="quantity">0</span>
+                                    <button class="plus-btn" onclick="changeQuantity(event,'plus')">+</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid__column-2-4" onclick="selectProduct('TRÀ SỮA MẬT ONG','https://simexcodl.com.vn/wp-content/uploads/2024/05/tra-sua-ca-phe-2.jpg','35.000đ')">
+                            <!-- Product Items -->
+                            <div class="home-product-item" data-product-name="TRÀ SỮA MẬT ONG" data-category="thức-uống">
+                                <div class="home-product-item__img" style="background-image:url(https://simexcodl.com.vn/wp-content/uploads/2024/05/tra-sua-ca-phe-2.jpg) ;"></div>
+                                <h5 class="home-product-item__name">TRÀ SỮA MẬT ONG</h5>
+                                <span class="home-product-item__price">35.000đ</span>
+                                <div class="home-product-item__add" >
+                                    <button class="minus-btn" onclick="changeQuantity(event,'minus')">–</button>
+                                    <span class="quantity">0</span>
+                                    <button class="plus-btn" onclick="changeQuantity(event,'plus')">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded",function (){
+        fetch("/emailuserinfo", { method: "GET" })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Lỗi khi lấy dữ liệu từ server");
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Gán email vào thẻ <span>
+                document.getElementById("usermail").innerText = data.email;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('usermail').innerText = 'Lỗi tải email';
+            });
+    })
+    document.addEventListener("DOMContentLoaded", function () {
+        // Lấy danh sách các liên kết danh mục và sản phẩm
+        const categoryLinks = document.querySelectorAll('.category-item__link'); // Các link danh mục
+        const productItems = document.querySelectorAll('.home-product-item'); // Các sản phẩm
+
+        // Thêm sự kiện click cho mỗi liên kết danh mục
+        categoryLinks.forEach(link => {
+            link.addEventListener("click", function (e) {
+                e.preventDefault(); // Ngăn chặn hành vi mặc định của thẻ <a>
+
+                // Lấy giá trị danh mục từ thuộc tính data-category
+                const category = this.getAttribute("data-category");
+
+                // Thêm class 'active' vào danh mục được chọn
+                document.querySelector('.category-item--active')?.classList.remove('category-item--active');
+                this.parentElement.classList.add('category-item--active');
+
+                // Hiển thị sản phẩm theo danh mục
+                if (category === "tất-cả") {
+                    // Nếu là danh mục "Tất cả", hiển thị tất cả sản phẩm
+                    productItems.forEach(item => {
+                        item.parentElement.style.display = "block"; // Hiển thị tất cả
+                    });
+                } else {
+                    // Lọc sản phẩm theo danh mục
+                    productItems.forEach(item => {
+                        const itemCategory = item.getAttribute("data-category");
+                        if (itemCategory === category) {
+                            item.parentElement.style.display = "block"; // Hiển thị sản phẩm khớp danh mục
+                        } else {
+                            item.parentElement.style.display = "none"; // Ẩn sản phẩm không khớp
+                        }
+                    });
+                }
+            });
+        });
+    });
+</script>
+</html>
