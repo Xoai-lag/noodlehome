@@ -37,7 +37,8 @@ window.onload = function() {
 };
 function goback(){
     window.history.back();
-}document.getElementById("finish").addEventListener("click", function () {
+}
+document.getElementById("finish").addEventListener("click", function () {
     const cart = JSON.parse(sessionStorage.getItem("cart")) || [];
 
     if (cart.length === 0) {

@@ -101,8 +101,9 @@ func CheckoutHandler(c *gin.Context) {
 			c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 			return
 		}
-		combined := append(listOrders_Item, items...)
-		if err := models.SaveOrders_ItemToJson("utils/Order_Item.json", combined); err != nil {
+		listOrders_Item = append(listOrders_Item, items...)
+
+		if err := models.SaveOrders_ItemToJson("utils/Order_Item.json", listOrders_Item); err != nil {
 			c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to save items"})
 			return
 		}
