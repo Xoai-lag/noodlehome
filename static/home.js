@@ -34,14 +34,13 @@ function loadCart() {
     if (cart.length === 0) {
         emptyCartMessage.style.display = "block";
         cartTotalElement.innerText = "Tổng: 0đ";
-    } else {
+    }  else {
         emptyCartMessage.style.display = "none";
         cart.forEach(item => {
             total += parseInt(item.price.replace('đ', '').replace('.', '')) * item.quantity;
 
             const cartItem = document.createElement("div");
-            cartItem.className="empty-cart"
-            cartItem.id="empty-cart-message"
+            cartItem.className = "cart-item";
             cartItem.innerHTML = `
                 <div class="cart-item__image">
                     <img src="${item.image}" alt="${item.name}">
@@ -50,13 +49,25 @@ function loadCart() {
                     <h4 class="cart-item__name">${item.name}</h4>
                     <p class="cart-item__price">${item.price} x ${item.quantity}</p>
                 </div>
+                <button class="remove-btn" onclick="removeFromCart('${item.id}')">Xóa</button>
             `;
             cartContainer.appendChild(cartItem);
         });
 
-        // Hiển thị tổng tiền
         cartTotalElement.innerText = `Tổng: ${total.toLocaleString()}đ`;
     }
+}
+function removeFromCart(productId) {
+    let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+
+    // Lọc bỏ món hàng theo ID
+    cart = cart.filter(item => item.id !== productId);
+
+    // Lưu giỏ hàng mới vào sessionStorage
+    sessionStorage.setItem("cart", JSON.stringify(cart));
+
+    // Tải lại giỏ hàng
+    loadCart();
 }
 function changeQuantity(event, action) {
     event.stopPropagation(); // Ngăn sự kiện click lan tỏa lên div cha

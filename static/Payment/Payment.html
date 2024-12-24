@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thanh Toán</title>
+  <link rel="stylesheet" href="Payment.css">
+</head>
+<body>
+<div class="container">
+  <a href="" class="back-link">&larr; Quay lại</a>
+  <div class="section">
+    <h3>Thông tin khách hàng</h3>
+    <label for="address">Địa chỉ</label>
+    <input type="text" id="address" placeholder="Nhập địa chỉ của bạn">
+  </div>
+
+  <div class="section">
+    <h3>Phương thức thanh toán</h3>
+    <select id="payment-method">
+      <option value="cash">Thanh toán khi nhận hàng</option>
+    </select>
+  </div>
+
+  <div class="section">
+    <h3>Món đã chọn</h3>
+    <div class="summary">
+      <div class="summary-item">
+        <span>Combo Đặc Biệt 2 Người</span>
+        <span>190.000đ</span>
+      </div>
+      <div class="summary-item">
+        <span>Phí vận chuyển</span>
+        <span>0đ</span>
+      </div>
+      <div class="summary-item">
+        <span>Tổng cộng</span>
+        <span>190.000đ</span>
+      </div>
+    </div>
+  </div>
+
+  <button class="btn">Bạn muốn đặt hàng?</button>
+</div>
+</body>
+</html>

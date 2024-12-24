@@ -26,5 +26,26 @@
     "payment_date": "2024-12-22T09:19:15.4426466+07:00",
     "payment_amount": "90000",
     "payment_method": "Cash"
+  },
+  {
+    "payment_id": "PMDH075146",
+    "oder_id": "DH075146",
+    "payment_date": "2024-12-24T07:51:46.3882685+07:00",
+    "payment_amount": "155000",
+    "payment_method": "Cash"
+  },
+  {
+    "payment_id": "PMDH080110",
+    "oder_id": "DH080110",
+    "payment_date": "2024-12-24T08:01:10.1247032+07:00",
+    "payment_amount": "45000",
+    "payment_method": "Cash"
+  },
+  {
+    "payment_id": "PMDH080642",
+    "oder_id": "DH080642",
+    "payment_date": "2024-12-24T08:06:42.1802899+07:00",
+    "payment_amount": "45000",
+    "payment_method": "Cash"
   }
 ]
